@@ -1,0 +1,18 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# The `cargo-build-script` crate is used to generate the `build.rs` file.
+cfg-if="0.1.2"
+worker="0.0.9"
+serde_json = "1.0.67"
+console_error_panic_hook = "0.1.2"
+
+[profile.release]
+opt-level = "s"
